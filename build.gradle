@@ -52,5 +52,20 @@ publishing {
         shadow(MavenPublication) { publication ->
             project.shadow.component(publication)
         }
+        
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+
+    repositories {
+        maven {
+            name = "ProtoHaxPackage"
+            url = uri("https://maven.pkg.github.com/answer2/ProtoHax")
+            credentials {
+                username = project.findProperty("gpr.user") ?: System.getenv("USERNAME")
+                password = project.findProperty("gpr.key") ?: System.getenv("TOKEN")
+            }
+        }
     }
 }
