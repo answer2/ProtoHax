@@ -4,7 +4,7 @@ plugins {
     id 'maven-publish'
 }
 
-group = 'dev.sora.relay'
+group = 'dev.sora.relay.answerdev'
 version = '1.4.0'
 
 repositories {
