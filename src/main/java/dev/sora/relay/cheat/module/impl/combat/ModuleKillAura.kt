@@ -5,6 +5,7 @@ import dev.sora.relay.cheat.module.CheatModule
 import dev.sora.relay.cheat.value.NamedChoice
 import dev.sora.relay.game.GameSession
 import dev.sora.relay.game.entity.Entity
+import dev.sora.relay.game.entity.EntityItem
 import dev.sora.relay.game.entity.EntityLocalPlayer
 import dev.sora.relay.game.event.EventTick
 import dev.sora.relay.game.utils.Rotation
