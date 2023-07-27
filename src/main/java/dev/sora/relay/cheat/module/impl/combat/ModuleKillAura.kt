@@ -32,7 +32,7 @@ class ModuleKillAura : CheatModule("KillAura", CheatCategory.COMBAT) {
 		val range = rangeValue.pow(2)
 		val moduleTargets = moduleManager.getModule(ModuleTargets::class.java)
 		val entityList = session.level.entityMap.values.filter {
-			it.distanceSq(session.player) < range && with(moduleTargets) { it.isTarget() } }
+			it.distanceSq(session.player) < range && it is EntityItem && with(moduleTargets) { it.isTarget() } }
 		if (entityList.isEmpty()) return@handle
 
 		val aimTarget = selectEntity(session, entityList)
