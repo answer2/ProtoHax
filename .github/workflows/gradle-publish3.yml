@@ -31,23 +31,11 @@ jobs:
       with:
         arguments: build
         
-        
-    - name: Upload Artifacts
-      uses: actions/upload-artifact@v3
-      with:
-       name: release.zip
-       path: out/Release
-     
-    - name: Upload Headers
-      uses: actions/upload-artifact@v3
-      with:
-         name: include
-         path: headers
-
 
     - name: Publish to GitHub Packages
       uses: gradle/gradle-build-action@bd5760595778326ba7f1441bcf7e88b49de61a25 # v2.6.0
       with:
+        run: ./gradlew publish
         arguments: publish
       env:
         USERNAME: ${{ github.actor }}
