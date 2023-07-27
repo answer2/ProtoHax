@@ -10,14 +10,12 @@ name: Gradle Package2
 on:
   release:
     types: [created]
-    
-    workflow_dispatch:
+  workflow_dispatch:
     inputs:
       distribution:
         description: 'Distribution name'
         required: true
         default: 'unspecified'
-
 
 jobs:
   build:
