@@ -30,7 +30,8 @@ jobs:
       run: ./gradlew build
 
     - name: Publish to GitHub Packages
-      run: ./gradlew publish -Pdistribution=${{ github.event.inputs.distribution }}
+      run: ./gradlew publish -Pdistribution=$DISTRIBUTION
       env:
+        DISTRIBUTION: ${{ github.event.inputs.distribution }}
         USERNAME: ${{ github.actor }}
         TOKEN: ${{ secrets.GITHUB_TOKEN }}
