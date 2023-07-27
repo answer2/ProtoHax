@@ -37,7 +37,7 @@ jobs:
 
         with:
 
-          java-version: '11'  # 或者你想要使用的 Java 版本
+          java-version: '17'  # 或者你想要使用的 Java 版本
 
       - name: Build and publish
 
